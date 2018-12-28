@@ -123,3 +123,5 @@ buildNumber.properties
 *.iml
 .idea/dictionaries/Blitz.xml
 .idea/dictionaries/Blitz.xml
+*.MF
+src/main/java/META-INF/MANIFEST.MF
