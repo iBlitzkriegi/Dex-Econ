@@ -15,4 +15,12 @@ public class Util {
         commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', ConfigManager.getPrefix() + message));
     }
 
+    public static boolean hasPermission(Player player, String permission) {
+        if (player.hasPermission(permission)) {
+            return true;
+        }
+        sendMessage(player, "You must have the " + permission + " permission in order to run this command!");
+        return false;
+    }
+
 }
