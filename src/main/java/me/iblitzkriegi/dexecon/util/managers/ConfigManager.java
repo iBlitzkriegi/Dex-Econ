@@ -10,10 +10,11 @@ import java.io.IOException;
 public class ConfigManager {
 
     static ConfigManager instance = new ConfigManager();
-    Plugin plugin;
+    public static Plugin plugin;
     FileConfiguration config;
     File file;
     public static String prefix;
+    public static int defaultBalance;
 
     public static ConfigManager getInstance() {
         return instance;
@@ -26,6 +27,7 @@ public class ConfigManager {
         getConfig().options().copyDefaults(true);
         plugin.saveDefaultConfig();
         prefix = config.getString("plugin-prefix");
+        defaultBalance = config.getInt("default-balance");
 
     }
 
@@ -40,13 +42,14 @@ public class ConfigManager {
     public void reloadConfig() {
         config = YamlConfiguration.loadConfiguration(file);
         prefix = config.getString("plugin-prefix");
+        defaultBalance = config.getInt("default-balance");
     }
 
     public static String getPrefix() {
         return prefix;
     }
 
-    public FileConfiguration getConfig() {
+    public static FileConfiguration getConfig() {
         return plugin.getConfig();
     }
 
