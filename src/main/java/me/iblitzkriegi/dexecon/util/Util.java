@@ -34,4 +34,10 @@ public class Util {
         return player.getName();
     }
 
+    public static String getUUIDfromName(String input) {
+        OfflinePlayer player = Bukkit.getOfflinePlayer(input);
+        if (player == null) return null;
+        return player.getUniqueId().toString();
+    }
+
 }
