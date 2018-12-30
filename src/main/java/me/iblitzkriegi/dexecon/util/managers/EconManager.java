@@ -31,4 +31,28 @@ public class EconManager {
         return balanceMap;
     }
 
+    public void setBalance(Player player, int balance) {
+        FileConfiguration config = ConfigManager.getConfig();
+        String uuid = Util.getUniqueId(player);
+        ConfigurationSection configurationSection = config.getConfigurationSection("Balances." + uuid);
+        if (configurationSection == null) {
+            setupPlayer(player)
+                    .set("balance", balance);
+            ConfigManager.getInstance().saveConfig();
+            return;
+        }
+        configurationSection.set("balance", balance);
+        ConfigManager.getInstance().saveConfig();
+    }
+
+    public int getBalance(Player player, String balance) {
+        FileConfiguration config = ConfigManager.getConfig();
+        String uuid = Util.getUniqueId(player);
+        ConfigurationSection configurationSection = config.getConfigurationSection("Balances." + uuid);
+        if (configurationSection == null) {
+            return 0;
+        }
+        return configurationSection.getInt("balance");
+    }
+
 }
