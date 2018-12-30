@@ -3,3 +3,9 @@ version: 1.0.0
 main: me.iblitzkriegi.dexecon.DexEcon
 author: iBlitzkriegi
 description: Economy plugin for Avdex
+commands:
+  bal:
+    description: Get either your own, or another players balance
+    usage: /bal [<player>]
+    aliases: balance
+

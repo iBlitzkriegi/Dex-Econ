@@ -1,5 +1,6 @@
 package me.iblitzkriegi.dexecon;
 
+import me.iblitzkriegi.dexecon.commands.CommandBal;
 import me.iblitzkriegi.dexecon.events.EvtJoin;
 import me.iblitzkriegi.dexecon.events.EvtLeave;
 import me.iblitzkriegi.dexecon.util.managers.ConfigManager;
@@ -12,6 +13,7 @@ public class DexEcon extends JavaPlugin {
         ConfigManager.getInstance().setup(this);
         getServer().getPluginManager().registerEvents(new EvtLeave(), this);
         getServer().getPluginManager().registerEvents(new EvtJoin(), this);
+        getCommand("bal").setExecutor(new CommandBal());
     }
 
     @Override
