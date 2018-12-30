@@ -45,7 +45,7 @@ public class EconManager {
         ConfigManager.getInstance().saveConfig();
     }
 
-    public int getBalance(Player player, String balance) {
+    public static int getBalance(Player player) {
         FileConfiguration config = ConfigManager.getConfig();
         String uuid = Util.getUniqueId(player);
         ConfigurationSection configurationSection = config.getConfigurationSection("Balances." + uuid);

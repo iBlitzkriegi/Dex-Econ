@@ -23,7 +23,7 @@ public class Util {
         if (player.hasPermission(permission)) {
             return true;
         }
-        sendMessage(player, "You must have the " + permission + " permission in order to run this command!");
+        sendMessage(player, "You must have the &a" + permission + " &fpermission in order to run this command!");
         return false;
     }
 
